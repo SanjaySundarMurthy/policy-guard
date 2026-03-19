@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "policy-guard"
+version = "1.0.0"
+description = "Kubernetes manifest security auditor — 75+ rules for Pod Security Standards, CIS benchmarks, RBAC, and container security."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [{name = "Sai Sandeep"}]
+keywords = ["kubernetes", "security", "policy", "audit", "pod-security", "CIS", "RBAC"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Security",
+    "Topic :: System :: Systems Administration",
+]
+dependencies = [
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+policy-guard = "policy_guard.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["policy_guard*"]
