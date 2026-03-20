@@ -159,4 +159,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ## Author
 
-**Sai Sandeep** — Built with ❤️ for Kubernetes security.
+**sanjaysundarmurthy** — Built with ❤️ for Kubernetes security.
