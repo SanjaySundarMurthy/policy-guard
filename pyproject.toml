@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "policy-guard"
+name = "k8s-policy-guard"
 version = "1.0.0"
 description = "Kubernetes manifest security auditor — 75+ rules for Pod Security Standards, CIS benchmarks, RBAC, and container security."
 readme = "README.md"
