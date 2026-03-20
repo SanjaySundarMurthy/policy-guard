@@ -32,3 +32,8 @@ policy-guard = "policy_guard.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["policy_guard*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-v --tb=short"
