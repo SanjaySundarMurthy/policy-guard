@@ -1,4 +1,8 @@
-# policy-guard
+﻿# policy-guard
+
+[![CI](https://github.com/SanjaySundarMurthy/policy-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/SanjaySundarMurthy/policy-guard/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/pypi/pyversions/k8s-policy-guard)](https://pypi.org/project/k8s-policy-guard/)
+[![PyPI](https://img.shields.io/pypi/v/k8s-policy-guard)](https://pypi.org/project/k8s-policy-guard/)
 
 **Kubernetes Manifest Security Auditor**
 
@@ -31,7 +35,7 @@ Kubernetes security is a minefield. One `privileged: true`, one `runAsUser: 0`, 
 ## Installation
 
 ```bash
-pip install -e .
+pip install k8s-policy-guard
 ```
 
 ---
@@ -160,3 +164,50 @@ MIT License — see [LICENSE](LICENSE) for details.
 ## Author
 
 **sanjaysundarmurthy** — Built with ❤️ for Kubernetes security.
+
+
+## 🐳 Docker
+
+Run without installing Python:
+
+```bash
+# Build the image
+docker build -t policy-guard .
+
+# Run
+docker run --rm policy-guard --help
+
+# Example with volume mount
+docker run --rm -v ${PWD}:/workspace policy-guard [command] /workspace
+```
+
+Or pull from the container registry:
+
+```bash
+docker pull ghcr.io/SanjaySundarMurthy/policy-guard:latest
+docker run --rm ghcr.io/SanjaySundarMurthy/policy-guard:latest --help
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push to branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+Please ensure tests pass before submitting:
+
+```bash
+pip install k8s-policy-guard
+pytest -v
+ruff check .
+```
+
+## 🔗 Links
+
+- **PyPI**: [https://pypi.org/project/k8s-policy-guard/](https://pypi.org/project/k8s-policy-guard/)
+- **GitHub**: [https://github.com/SanjaySundarMurthy/policy-guard](https://github.com/SanjaySundarMurthy/policy-guard)
+- **Issues**: [https://github.com/SanjaySundarMurthy/policy-guard/issues](https://github.com/SanjaySundarMurthy/policy-guard/issues)
