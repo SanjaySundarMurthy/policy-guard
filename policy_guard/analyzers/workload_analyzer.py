@@ -1,8 +1,8 @@
 """Workload and network exposure analyzer.
 
-Rules PG-WRK-001 through PG-WRK-010 and PG-NET-001 through PG-NET-006.
+Rules PG-WRK-001 through PG-WRK-007 and PG-NET-001 through PG-NET-005.
 """
-from policy_guard.models import Violation, Severity, Category, Resource
+from policy_guard.models import Violation, Severity, Category
 from policy_guard.parser import get_pod_spec
 
 WORKLOAD_KINDS = {"Pod", "Deployment", "StatefulSet", "DaemonSet", "ReplicaSet", "Job", "CronJob"}

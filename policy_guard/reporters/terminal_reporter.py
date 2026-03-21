@@ -6,7 +6,6 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 from rich.rule import Rule
-from rich.columns import Columns
 
 from policy_guard.models import (
     AuditReport, Severity, Category, PolicyLevel,
@@ -81,7 +80,7 @@ def _print_score(report, console):
     score_text = Text()
     score_text.append("  Security Score: ", style="bold")
     score_text.append(f"{report.score}", style=f"bold {grade_color}")
-    score_text.append(f" / 100", style="dim")
+    score_text.append(" / 100", style="dim")
     score_text.append("    Grade: ", style="bold")
     score_text.append(f" {report.grade} ", style=f"bold white on {grade_color}")
 
@@ -272,5 +271,5 @@ def _print_footer(report, console):
     else:
         console.print(f"[yellow]  💡 {total} suggestion(s) to improve security posture.[/yellow]")
 
-    console.print(f"[dim]  policy-guard v1.0.0 | 75+ rules | PSS + CIS + RBAC | Made with ❤️  for K8s security[/dim]")
+    console.print("[dim]  policy-guard v1.0.0 | 50+ rules | PSS + CIS + RBAC | Made with ❤️  for K8s security[/dim]")
     console.print()

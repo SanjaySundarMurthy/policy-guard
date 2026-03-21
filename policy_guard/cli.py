@@ -6,7 +6,7 @@ import click
 from rich.console import Console
 
 from policy_guard import __version__
-from policy_guard.models import AuditReport, Severity, Category, PolicyLevel
+from policy_guard.models import AuditReport, Severity, PolicyLevel
 from policy_guard.parser import parse_manifests
 from policy_guard.analyzers import pod_security, container_security, rbac_analyzer, workload_analyzer
 from policy_guard.reporters.terminal_reporter import print_report
@@ -217,7 +217,7 @@ def rules():
     console.print()
     console.print(table)
     console.print(f"\n[dim]  {len(rule_defs)} validation rules across {len(set(c for _,_,c,_ in rule_defs))} categories[/dim]")
-    console.print(f"[dim]  Covers: Pod Security Standards (Baseline+Restricted) | CIS K8s Benchmarks | RBAC | Network[/dim]\n")
+    console.print("[dim]  Covers: Pod Security Standards (Baseline+Restricted) | CIS K8s Benchmarks | RBAC | Network[/dim]\n")
 
 
 if __name__ == "__main__":

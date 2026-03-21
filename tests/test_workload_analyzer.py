@@ -13,7 +13,6 @@ class TestWorkloadAnalyzer:
     def test_secure_deployment_fewer_issues(self, good_manifests):
         resources = parse_manifests(good_manifests)
         violations = analyze(resources)
-        wrk_ids = [v.rule_id for v in violations if v.rule_id.startswith("PG-WRK")]
         # secure deployment has replicas: 2, so should not trigger PG-WRK-001
         assert "PG-WRK-001" not in [v.rule_id for v in violations]
 

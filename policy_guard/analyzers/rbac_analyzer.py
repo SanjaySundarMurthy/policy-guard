@@ -1,6 +1,6 @@
 """RBAC analyzer — checks Roles, ClusterRoles, and bindings for over-privilege.
 
-Rules PG-RBAC-001 through PG-RBAC-012.
+Rules PG-RBAC-001 through PG-RBAC-011.
 """
 from policy_guard.models import Violation, Severity, Category, Resource
 

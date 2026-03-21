@@ -1,9 +1,9 @@
 """Pod Security Standards analyzer — checks against Privileged, Baseline, and Restricted levels.
 
-Rules PG-PSS-001 through PG-PSS-025.
+Rules PG-PSS-001 through PG-PSS-019.
 Based on: https://kubernetes.io/docs/concepts/security/pod-security-standards/
 """
-from policy_guard.models import Violation, Severity, Category, PolicyLevel, Resource
+from policy_guard.models import Violation, Severity, Category, PolicyLevel
 from policy_guard.parser import get_pod_spec, get_containers
 
 # Linux capabilities that must be dropped in Restricted level
@@ -133,7 +133,7 @@ def _check_host_paths(res, pod_spec, violations):
                 resource_name=res.name,
                 namespace=res.namespace,
                 file_path=res.file_path,
-                field_path=f"spec.volumes[].hostPath.path",
+                field_path="spec.volumes[].hostPath.path",
                 policy_level=PolicyLevel.BASELINE,
                 suggestion="Replace hostPath volumes with emptyDir, PVC, or configMap",
                 cis_id="5.2.13",
@@ -268,7 +268,7 @@ def _check_run_as_user(res, pod_spec, containers, violations):
             rule_id="PG-PSS-010",
             severity=Severity.HIGH,
             category=Category.POD_SECURITY,
-            message=f"Pod spec runAsUser is 0 (root)",
+            message="Pod spec runAsUser is 0 (root)",
             resource_kind=res.kind,
             resource_name=res.name,
             namespace=res.namespace,
@@ -509,7 +509,7 @@ def _check_service_account(res, pod_spec, violations):
                 rule_id="PG-PSS-019",
                 severity=Severity.MEDIUM,
                 category=Category.POD_SECURITY,
-                message=f"Uses default service account with auto-mounted token",
+                message="Uses default service account with auto-mounted token",
                 resource_kind=res.kind,
                 resource_name=res.name,
                 namespace=res.namespace,

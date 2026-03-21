@@ -3,7 +3,7 @@ import json
 from datetime import datetime, timezone
 from collections import Counter
 
-from policy_guard.models import AuditReport, Severity, Category, PolicyLevel
+from policy_guard.models import AuditReport, Severity, Category
 
 
 def export_json(report: AuditReport, output_path: str):

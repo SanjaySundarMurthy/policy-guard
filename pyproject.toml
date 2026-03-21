@@ -5,9 +5,9 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "k8s-policy-guard"
 version = "1.0.0"
-description = "Kubernetes manifest security auditor — 75+ rules for Pod Security Standards, CIS benchmarks, RBAC, and container security."
+description = "Kubernetes manifest security auditor — 50+ rules for Pod Security Standards, CIS benchmarks, RBAC, and container security."
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 requires-python = ">=3.8"
 authors = [{name = "Sai Sandeep"}]
 keywords = ["kubernetes", "security", "policy", "audit", "pod-security", "CIS", "RBAC"]
@@ -16,7 +16,6 @@ classifiers = [
     "Environment :: Console",
     "Intended Audience :: Developers",
     "Intended Audience :: System Administrators",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Topic :: Security",
     "Topic :: System :: Systems Administration",

@@ -137,18 +137,30 @@ class AuditReport:
         max_deduction = max(self.total_resources * 20, 80)
         self.score = max(0, round(100 - (total_deductions / max(max_deduction, 1)) * 100, 1))
 
-        if self.score >= 95: self.grade = "A+"
-        elif self.score >= 90: self.grade = "A"
-        elif self.score >= 85: self.grade = "A-"
-        elif self.score >= 80: self.grade = "B+"
-        elif self.score >= 75: self.grade = "B"
-        elif self.score >= 70: self.grade = "B-"
-        elif self.score >= 65: self.grade = "C+"
-        elif self.score >= 60: self.grade = "C"
-        elif self.score >= 55: self.grade = "C-"
-        elif self.score >= 50: self.grade = "D"
-        elif self.score >= 40: self.grade = "D-"
-        else: self.grade = "F"
+        if self.score >= 95:
+            self.grade = "A+"
+        elif self.score >= 90:
+            self.grade = "A"
+        elif self.score >= 85:
+            self.grade = "A-"
+        elif self.score >= 80:
+            self.grade = "B+"
+        elif self.score >= 75:
+            self.grade = "B"
+        elif self.score >= 70:
+            self.grade = "B-"
+        elif self.score >= 65:
+            self.grade = "C+"
+        elif self.score >= 60:
+            self.grade = "C"
+        elif self.score >= 55:
+            self.grade = "C-"
+        elif self.score >= 50:
+            self.grade = "D"
+        elif self.score >= 40:
+            self.grade = "D-"
+        else:
+            self.grade = "F"
 
     def determine_compliance_level(self):
         """Determine the highest PSS level that the resources comply with."""

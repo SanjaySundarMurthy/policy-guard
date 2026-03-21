@@ -1,10 +1,10 @@
 """Container and image security analyzer.
 
-Rules PG-IMG-001 through PG-IMG-012 and PG-CTR-001 through PG-CTR-008.
+Rules PG-IMG-001 through PG-IMG-004 and PG-CTR-001 through PG-CTR-007.
 """
 import re
 
-from policy_guard.models import Violation, Severity, Category, Resource
+from policy_guard.models import Violation, Severity, Category
 from policy_guard.parser import get_containers, get_pod_spec
 
 # Trusted registries (common defaults)
@@ -288,7 +288,7 @@ def _check_image_pull_secrets(res, pod_spec, violations):
             rule_id="PG-IMG-004",
             severity=Severity.MEDIUM,
             category=Category.IMAGE,
-            message=f"Uses private registry but no imagePullSecrets configured",
+            message="Uses private registry but no imagePullSecrets configured",
             resource_kind=res.kind,
             resource_name=res.name,
             namespace=res.namespace,
